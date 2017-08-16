@@ -6,4 +6,6 @@
 export const environment = {
   production: false,
   paymentApiBaseAddress: "https://localhost:44300/payments/",
+  clientId: "",
+  clientSecret: "",
 };
