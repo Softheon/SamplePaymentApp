@@ -5,7 +5,6 @@
  * @class CreditCardResponse
  */
 export class CreditCardResponse {
-
     /**
      * The payment token for the credit card
      * 

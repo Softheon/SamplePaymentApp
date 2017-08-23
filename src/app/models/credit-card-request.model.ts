@@ -7,7 +7,6 @@ import { Address } from './address.model';
  * @class CreditCardRequest
  */
 export class CreditCardRequest {
-    
     /**
      * The number on the credit card
      * 

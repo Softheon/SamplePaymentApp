@@ -13,6 +13,7 @@ import { BillingInfoComponent } from './billing-info/billing-info.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CreditCardService } from './services/credit-card.service';
 import { AuthorizationService } from './services/authorization.service';
+import { PaymentService } from './services/payment.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AuthorizationService } from './services/authorization.service';
   ],
   providers: [
     CreditCardService,
-    AuthorizationService
+    AuthorizationService,
+    PaymentService
   ],
   bootstrap: [AppComponent]
 })

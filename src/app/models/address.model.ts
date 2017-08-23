@@ -5,7 +5,6 @@
  * @class Address
  */
 export class Address {
-
     /**
      * The first line of the street address. Typically contains the number and street name
      * 

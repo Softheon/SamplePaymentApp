@@ -5,7 +5,6 @@
  * @class AccessTokenResponse
  */
 export class AccessTokenResponse {
-
     /**
      * The bearer token
      * 

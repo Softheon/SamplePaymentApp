@@ -7,7 +7,6 @@ import { environment } from '../../environments/environment';
  * @class AccessTokenRequest
  */
 export class AccessTokenRequest {
-
     /**
      * Client's unique identifier
      * 
