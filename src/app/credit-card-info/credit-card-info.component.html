@@ -1,0 +1,55 @@
+<div class="main-content" fxLayout="row" fxLayoutAlign="center center">
+  <md-card class="payment-card">
+    <md-card-header>
+      <md-card-title>
+        <h2>Amount $10.00</h2>
+      </md-card-title>
+      <md-card-subtitle>
+        <h4>Pay By Credit Card</h4>
+      </md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <form fxLayout="column">
+        <div>
+          <md-input-container class="full-width">
+            <input mdInput type="text" placeholder="Name on Account" [ngModel]="cardService.creditCard.cardHolderName" name="cardHolderName">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container class="full-width">
+            <input mdInput type="email" placeholder="Email" [ngModel]="cardService.creditCard.email" name="email">
+          </md-input-container>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between" fxLayoutGap="10px">
+          <div class="full-width">
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Credit Card Number" [ngModel]="cardService.creditCard.cardNumber" name="cardNumber">
+            </md-input-container>
+          </div>
+          <div class="full-width">
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="CVV Code" maxlength="4" [ngModel]="cardService.creditCard.securityCode" name="securityCode">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between" fxLayoutGap="10px">
+          <div class="full-width pad-top-sm">
+            <md-select placeholder="Expiration Month" [ngModel]="cardService.creditCard.expirationMonth" name="expirationMonth" class="full-width">
+              <md-option *ngFor="let month of months" [value]="month">{{ monthNames[month-1] }}</md-option>
+            </md-select>
+          </div>
+          <div class="full-width pad-top-sm">
+            <md-select placeholder="Expiration Year" [ngModel]="cardService.creditCard.expirationYear" name="expirationYear" class="full-width">
+              <md-option *ngFor="let year of expirationYears" [value]="year">{{ year }}</md-option>
+            </md-select>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+    <md-card-actions>
+      <div fxLayout="row" fxLayoutAlign="end">
+        <button md-raised-button (click)="next()">Next</button>
+      </div>
+    </md-card-actions>
+  </md-card>
+</div>
