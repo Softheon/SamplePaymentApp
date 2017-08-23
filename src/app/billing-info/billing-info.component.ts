@@ -26,6 +26,14 @@ import { PaymentMethod } from '../models/payment-method.model';
 export class BillingInfoComponent implements OnInit {
 
   /**
+   * The progress of making a payment
+   * 
+   * @type {(number | boolean)}
+   * @memberof BillingInfoComponent
+   */
+  public progress: number | boolean = false;;
+
+  /**
    * The two letter abbreviations of the list of states in the United States
    * 
    * @type {string[]}
@@ -124,10 +132,19 @@ export class BillingInfoComponent implements OnInit {
    * @memberof BillingInfoComponent
    */
   public submit(): void {
+    //Set make a payment progress to 0
+    this.progress = 0;
+
     //Retrieve an access token from the identity server
     this.authorizeService.authorize().subscribe(authRes => {
+      //Update progress to 33%
+      this.progress = .33;
+
       //Tokenize the credit card
       this.cardService.tokenizeCreditCard(authRes.access_token).subscribe(tokenizeRes => {
+        //Update progress to 66%
+        this.progress = .66;
+
         //Make the payment request model
         let paymentReq: PaymentRequest = new PaymentRequest();
         paymentReq.description = "Test Payment";
@@ -139,6 +156,8 @@ export class BillingInfoComponent implements OnInit {
 
         //Make the payment
         this.paymentService.makePayment(paymentReq, authRes.access_token).subscribe(paymentRes => {
+          //Update progress to 100%
+          this.progress = false;
           console.log(paymentRes)
         });
       });

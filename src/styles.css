@@ -30,3 +30,8 @@ body {
 .payment-card {
     min-width: 300px;
 }
+
+.ladda-button {
+    background: white !important;
+    font-size: 14px !important;
+}

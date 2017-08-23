@@ -42,7 +42,7 @@
     <md-card-actions>
       <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="5px">
         <button md-button (click)="back()">Back</button>
-        <button md-raised-button (click)="submit()">Submit</button>
+        <button md-raised-button [ladda]="progress" data-style="expand-left" class="soft-btn" (click)="submit()">Submit</button>
       </div>
     </md-card-actions>
   </md-card>

@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CreditCardService } from './services/credit-card.service';
 import { AuthorizationService } from './services/authorization.service';
 import { PaymentService } from './services/payment.service';
+import { LaddaModule } from 'angular2-ladda';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PaymentService } from './services/payment.service';
     FlexLayoutModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    LaddaModule
   ],
   providers: [
     CreditCardService,
