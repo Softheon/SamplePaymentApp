@@ -6,6 +6,7 @@ import { PaymentResults } from '../models/payment-results.model';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/catch';
+import { Payment } from '../models/payment.model';
 
 /**
  * Services that makes a payment using the credit card payment token
@@ -15,6 +16,7 @@ import 'rxjs/add/operator/catch';
  */
 @Injectable()
 export class PaymentService {
+  public payment: Payment;
   /**
    * Creates an instance of PaymentService.
    * @param {HttpClient} http 
@@ -32,7 +34,7 @@ export class PaymentService {
    * @returns {Observable<PaymentResults>} 
    * @memberof PaymentService
    */
-  public makePayment(req: PaymentRequest, accessToken: string) : Observable<PaymentResults> {
+  public makePayment(req: PaymentRequest, accessToken: string) : Observable<Payment> {
     
     //Executes the HTTP POST
     return this.http.post(environment.paymentApiBaseAddress + '/payments', req, {

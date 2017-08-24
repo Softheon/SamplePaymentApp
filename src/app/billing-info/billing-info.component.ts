@@ -132,14 +132,13 @@ export class BillingInfoComponent implements OnInit {
    * @memberof BillingInfoComponent
    */
   public submit(): void {
-    //Set make a payment progress to 0
+    //Set make a payment progress to 0%
     this.progress = 0;
 
     //Retrieve an access token from the identity server
     this.authorizeService.authorize().subscribe(authRes => {
-      //Update progress to 33%
+      //Set progress to 33%
       this.progress = .33;
-
       //Tokenize the credit card
       this.cardService.tokenizeCreditCard(authRes.access_token).subscribe(tokenizeRes => {
         //Update progress to 66%
@@ -158,7 +157,9 @@ export class BillingInfoComponent implements OnInit {
         this.paymentService.makePayment(paymentReq, authRes.access_token).subscribe(paymentRes => {
           //Update progress to 100%
           this.progress = false;
-          console.log(paymentRes)
+          this.paymentService.payment = paymentRes;
+          console.log(paymentRes);
+          this.router.navigate(['/payment-results']);
         });
       });
     })

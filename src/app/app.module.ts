@@ -15,12 +15,14 @@ import { CreditCardService } from './services/credit-card.service';
 import { AuthorizationService } from './services/authorization.service';
 import { PaymentService } from './services/payment.service';
 import { LaddaModule } from 'angular2-ladda';
+import { PaymentResultsComponent } from './payment-results/payment-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreditCardInfoComponent,
-    BillingInfoComponent
+    BillingInfoComponent,
+    PaymentResultsComponent
   ],
   imports: [
     BrowserModule,

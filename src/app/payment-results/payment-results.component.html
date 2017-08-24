@@ -1,0 +1,109 @@
+<div class="main-content" fxLayout="row" fxLayoutAlign="center center">
+  <md-card class="payment-card">
+    <md-card-header>
+      <md-card-title>
+        <h2>Thank You For Your Payment!</h2>
+      </md-card-title>
+      <md-card-subtitle>
+        <h4>Payment Results</h4>
+      </md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <form fxLayout="column" fxLayoutAlign="space-between">
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment ID" [ngModel]="paymentService.payment.id" name="id">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Account ID" [ngModel]="paymentService.payment.accountId" name="accountId">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Amount" [ngModel]="paymentService.payment.paymentAmount" name="paymentAmount">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Description" [ngModel]="paymentService.payment.description" name="description">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Reference ID" [ngModel]="paymentService.payment.referenceId" name="referenceId">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Token Used" [ngModel]="paymentService.payment.paymentMethod.paymentToken"
+                name="paymentToken">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Type" [ngModel]="paymentService.payment.paymentMethod.type" name="type">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Status" [ngModel]="paymentService.payment.result.status" name="status">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Code" [ngModel]="paymentService.payment.result.code" name="code">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Message" [ngModel]="paymentService.payment.result.message" name="message">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Provider Account ID" [ngModel]="paymentService.payment.result.providerAccountId"
+                name="providerAccountId">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Merchant Transaction ID" [ngModel]="paymentService.payment.result.merchantTransactionId"
+                name="merchantTransactionId">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Merchant Transaction Fee" [ngModel]="paymentService.payment.result.merchantTransactionFee"
+                name="merchantTransactionFee">
+            </md-input-container>
+          </div>
+          <div>
+            <md-input-container class="full-width">
+              <input mdInput type="text" placeholder="Payment Date" [ngModel]="paymentService.payment.createdDate" name="createdDate">
+            </md-input-container>
+          </div>
+        </div>
+      </form>
+    </md-card-content>
+    <md-card-actions>
+      <div fxLayout="row" fxLayoutAlign="end">
+        <button md-raised-button (click)="makeAnotherPayment()">Make Another Payment</button>
+      </div>
+    </md-card-actions>
+  </md-card>
+</div>
