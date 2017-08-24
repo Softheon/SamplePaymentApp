@@ -7,7 +7,7 @@ export const environment = {
   production: false,
   paymentApiBaseAddress: "https://hack.softheon.io/api/payments/v1",
   authorizationBaseAddress: "https://hack.softheon.io/oauth2",
-  clientId: "09dec990-dd27-426e-86d9-5a2fb426203d",
-  clientSecret: "f993dddd-7d42-462b-8726-6d36aa19c61d",
+  clientId: "", //Your project's client id
+  clientSecret: "", //Your project's client secret
   scopes: "paymentapi"
 };
